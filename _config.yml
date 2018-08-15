@@ -1,10 +1,3 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      rouge
-
-kramdown:
-  input:          GFM
-
 # Setup
 title:            Brett Miller
 tagline:          'My Blog'
@@ -25,6 +18,15 @@ paginate:         10
 # paginate_path:    '/page:num'
                     # Or '/blog/page:num' if you want to move your index pages
 
+# Set the defaults for Front Matter to save having to set on each blog post. Don't anticipate much else will change once happy with the layout.
+defaults:
+  -
+    scope:
+      path:       ""
+      type:       "posts"
+    values:
+      layout:     "post"
+
 plugins:
   - jekyll-feed
   - jekyll-gist
@@ -36,6 +38,19 @@ sidebar_home_link:  true
                                 # page. If you change your paginate_path,
                                 # set this to the root of the paginate_path
                                 # to enable a separate blog link.
+
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+kramdown:
+  input:          GFM
+  hard_wrap:      false
+
+disqus:
+  shortname:      millerb
+
+# Variables for nav links
 github:
   repo:           https://github.com/brettmillerb
 
