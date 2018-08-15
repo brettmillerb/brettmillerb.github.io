@@ -2,6 +2,9 @@
 markdown:         kramdown
 highlighter:      rouge
 
+kramdown:
+  input:          GFM
+
 # Setup
 title:            Brett Miller
 tagline:          'My Blog'
@@ -18,7 +21,7 @@ author:
   name:           'Brett Miller'
   url:            https://twitter.com/BrettMiller_IT
 
-paginate:         5
+paginate:         10
 # paginate_path:    '/page:num'
                     # Or '/blog/page:num' if you want to move your index pages
 
