@@ -1,0 +1,46 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Setup
+title:            Brett Miller
+tagline:          'My Blog'
+description:      'System Administrator<br> Powershell Antics </br> Tech Poking'
+url:              https://millerb.co.uk
+baseurl:          ''
+                  # the optional subpath of your site, e.g. "/blog"
+                  # NB: This applies to all pages in your Jekyll site.
+                  # If you want to move just the blog index pages but keep
+                  # other pages at root, see the paginate_path and
+                  # sidebar_blog_link below.
+
+author:
+  name:           'Brett Miller'
+  url:            https://twitter.com/BrettMiller_IT
+
+paginate:         5
+# paginate_path:    '/page:num'
+                    # Or '/blog/page:num' if you want to move your index pages
+
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+
+# Custom vars
+sidebar_home_link:  true
+# sidebar_blog_link:  '/blog'   # By default, your home page is your blog
+                                # page. If you change your paginate_path,
+                                # set this to the root of the paginate_path
+                                # to enable a separate blog link.
+github:
+  repo:           https://github.com/brettmillerb
+
+linkedin:
+  profile:        https://www.linkedin.com/in/brett-millerit/
+
+twitter:
+  profile:        https://twitter.com/BrettMiller_IT
+
+slack-workspace:
+  powershell:     https://slofile.com/slack/PowerShell
