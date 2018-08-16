@@ -26,13 +26,11 @@ This will take you to the connectors section where you have a whole host of conn
 
 Find and select the Incoming webhook from the list of connectors.
 
-![TeamsConnector2](/_screenshots/TeamsConnector-2.png)
+![Incoming Webhook](/_screenshots/IncomingWebhook.png)
 
 click the Configure Button and give your Webhook a name and you can upload your own image which will be displayed with each message in the channel.
 
-![TeamsConnector3](/_screenshots/TeamsConnector-3.png)
-
-C:\Users\brettm\Github\brettmillerb.github.io\_screenshots\TeamsConnector-3.png
+![Configure Webhook](/_screenshots/ConfigureWebhook.png)
 
 Once this has been entered and you click Create you will be presented with a Webhook URL which you will use in your scripts for interacting with your Webhook. Keep this safe and don't commit it to public Git. Yes I did.
 
