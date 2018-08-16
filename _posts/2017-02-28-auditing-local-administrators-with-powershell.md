@@ -1,6 +1,6 @@
 ---
 title: Auditing Local Administrators with Powershell
-date: 2017-02-28T15:57:21+00:00
+date: 2017-02-28 15:57:21
 
 tags:
   - Active Directory

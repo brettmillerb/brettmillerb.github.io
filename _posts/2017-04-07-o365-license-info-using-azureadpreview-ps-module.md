@@ -1,6 +1,6 @@
 ---
 title: O365 License info using AzureADPreview PS Module
-date: 2017-04-07T11:19:24+00:00
+date: 2017-04-07 11:19:24
 
 tags:
   - Active Directory

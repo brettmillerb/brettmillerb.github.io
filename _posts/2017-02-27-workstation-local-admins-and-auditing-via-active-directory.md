@@ -1,6 +1,6 @@
 ---
 title: Workstation Local Admins and Auditing via Active Directory
-date: 2017-02-27T16:04:17+00:00
+date: 2017-02-27 16:04:17
 tags:
   - Active Directory
   - Auditing

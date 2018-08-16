@@ -1,6 +1,6 @@
 ---
 title: '#PSHelp hashtag monitoring with MSFlow'
-date: 2018-04-03T16:22:21+00:00
+date: 2018-04-03 16:22:21
 
 tags:
   - Microsoft Flow

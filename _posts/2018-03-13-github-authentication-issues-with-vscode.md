@@ -1,6 +1,6 @@
 ---
 title: Github authentication issues with VSCode?
-date: 2018-03-13T12:13:22+00:00
+date: 2018-03-13 12:13:22
 
 tags:
   - Git

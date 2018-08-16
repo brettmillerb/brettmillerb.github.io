@@ -1,6 +1,6 @@
 ---
 title: 'Get AzureAD User from On-premises sAMAccountname &#8211; For the lazy'
-date: 2017-07-17T11:40:45+00:00
+date: 2017-07-17 11:40:45
 
 tags:
   - Active Directory

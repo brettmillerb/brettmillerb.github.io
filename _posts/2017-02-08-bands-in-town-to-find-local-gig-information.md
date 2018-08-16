@@ -1,6 +1,6 @@
 ---
 title: Bands in Town to Find Local Gig Information
-date: 2017-02-08T01:29:55+00:00
+date: 2017-02-08 01:29:55
 tags:
   - API
   - Powershell

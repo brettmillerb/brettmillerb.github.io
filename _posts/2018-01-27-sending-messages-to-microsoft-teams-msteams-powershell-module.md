@@ -1,6 +1,6 @@
 ---
 title: 'Sending Messages to Microsoft Teams &#8211; MSTeams Powershell Module'
-date: 2018-01-27T11:41:59+00:00
+date: 2018-01-27 11:41:00
 
 tags:
   - JSON

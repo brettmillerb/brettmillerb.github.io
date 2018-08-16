@@ -1,6 +1,6 @@
 ---
 title: VSCode Focus Terminal Keyboard Shortcut
-date: 2018-02-12T10:54:16+00:00
+date: 2018-02-12 10:54:16
 
 tags:
   - JSON

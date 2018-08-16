@@ -1,6 +1,6 @@
 ---
 title: Powershell Module Development Livestream
-date: 2018-06-06T00:18:40+00:00
+date: 2018-06-06 00:18:40
 
 tags:
   - Git
