@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Convert O365 ImmutableID from AD objectGUID
 date: 2017-02-08 00:25:29
 ---
 We had an issue with an account recently which meant that we had to hard delete the O365 account and re-synchronise from on-premises without deleting the on-premises AD account.
