@@ -1,6 +1,6 @@
 ---
 title: Convert O365 ImmutableID from AD objectGUID
-date: 2017-02-08 00:25:29
+date: 2017-07-16 00:25:29
 
 tags:
   - Powershell
