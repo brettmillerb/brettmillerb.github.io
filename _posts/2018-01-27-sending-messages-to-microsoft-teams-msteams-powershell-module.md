@@ -128,7 +128,8 @@ Sending the information
 ```powershell
 New-TeamsMessage @params
 ```
-![Detailed Teams Message](/_screenshots/DetailedTeamsMessage.png)
+
+![DetailedTeamsMessage](/_screenshots/DetailedTeamsMessage.png)
 
 #### Adding Buttons
 
@@ -142,7 +143,7 @@ New-TeamsMessage @params -Button {
 }
 ```
 
-![Detailed Teams Message with Buttons](/_screenshots/DetailedTeamsMessage-buttons.png)
+![DetailedTeamsMessagewithButtons](/_screenshots/DetailedTeamsMessage-buttons.png)
 
 #### Outgoing Webhooks
 
