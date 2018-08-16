@@ -1,5 +1,5 @@
 ---
-title: Sending Messages to Microsoft Teams &#8211; MSTeams Powershell Module
+title: Sending Messages to Microsoft Teams - MSTeams Powershell Module
 date: 2018-01-27 11:41:00
 
 tags:
@@ -31,6 +31,8 @@ Find and select the Incoming webhook from the list of connectors.
 click the Configure Button and give your Webhook a name and you can upload your own image which will be displayed with each message in the channel.
 
 ![TeamsConnector3](/_screenshots/TeamsConnector-3.png)
+
+C:\Users\brettm\Github\brettmillerb.github.io\_screenshots\TeamsConnector-3.png
 
 Once this has been entered and you click Create you will be presented with a Webhook URL which you will use in your scripts for interacting with your Webhook. Keep this safe and don't commit it to public Git. Yes I did.
 
