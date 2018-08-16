@@ -1,5 +1,5 @@
 ---
-title: 'Get AzureAD User from On-premises sAMAccountname &#8211; For the lazy'
+title: Get AzureAD User from On-premises sAMAccountname &#8211; For the lazy
 date: 2017-07-17 11:40:45
 
 tags:

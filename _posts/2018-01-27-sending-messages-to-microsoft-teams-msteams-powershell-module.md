@@ -148,7 +148,8 @@ New-TeamsMessage @params -Button {
 
 There was a tweet yesterday which was an announcement of outgoing webhooks which is an amazing feature to be adding to Teams and will allow greater interaction with other systems.
 
-{% twitter https://twitter.com/bill_bliss/status/956236590015160320 %}
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">RIP <a href="https://twitter.com/MicrosoftTeams?ref_src=twsrc%5Etfw">@MicrosoftTeams</a> custom bots. Long live outgoing webhooks! <br><br>We confused everyone. We learned our lesson. We changed the name.<br><br>New docs: <a href="https://t.co/hkLH0ln5a4">https://t.co/hkLH0ln5a4</a> ….<br><br>I also created a new Node.js sample - only 18 lines of Javascript!</p>&mdash; Bill Bliss (@bill_bliss) <a href="https://twitter.com/bill_bliss/status/956236590015160320?ref_src=twsrc%5Etfw">January 24, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Hopefully I will get to have a play with this at some point in the not so distant future, learn some node.js and someone will create a reminder bot which I use a great deal in Slack.
 
