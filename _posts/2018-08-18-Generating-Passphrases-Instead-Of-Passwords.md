@@ -1,5 +1,6 @@
 ---
 title: Generating Passphrases Instead Of Passwords
+summary: Memorable passphrases are now favourable over difficult ASCII passwords. Generate Passphrases with a Powershell function.
 
 tags:
   - Identity Management
