@@ -10,7 +10,8 @@ tags:
 ---
 
 ### Security vs Memorability
-If you are involved with identity management you'll have encountered the password length and duration scenario, you will most probably have encountered and discussed the password vs passphrase at great length and embarked on the
+If you are involved with identity management you'll have encountered the password length and duration scenario, you will most probably have encountered and discussed the password vs passphrase at great length and embarked on the discussion:
+
 > Well passwords of `x` length have `x` entropy because.....
 
 I'm not going to go into that here as it has already been discussed elsewhere in great length that I couldn't do it justice but a few links.
