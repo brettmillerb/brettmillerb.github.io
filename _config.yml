@@ -13,6 +13,7 @@ baseurl:          ''
 author:
   name:           'Brett Miller'
   url:            https://twitter.com/BrettMiller_IT
+  avatar:         "https://millerb.co.uk/images/avatar.jpg"
 
 paginate:         10
 # paginate_path:    '/page:num'

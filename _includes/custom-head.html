@@ -1,1 +1,18 @@
 <!-- Additional head bits without overriding original head -->
+
+<!-- Twitter cards -->
+<meta name="twitter:site"    content="@{{ site.twitter.profile }}">
+<meta name="twitter:creator" content="@{{ site.author.name }}">
+<meta name="twitter:title"   content="{{ page.title }}">
+
+<!-- If Post has a custom summary, use that for description
+    else use the sites description -->
+{% if page.summary %}
+<meta name="twitter:description" content="{{ page.summary }}">
+{% else %}
+<meta name="twitter:description" content="{{ site.description }}">
+{% endif %}
+
+<!-- Card Image-->
+<meta name="twitter:card"  content="summary">
+<meta name="twitter:image" content="{{ site.author.avatar }}">
