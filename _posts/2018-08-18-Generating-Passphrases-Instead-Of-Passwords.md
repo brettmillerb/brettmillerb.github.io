@@ -38,7 +38,7 @@ I created a function which generates passphrases from a list of words
 future-right-beauty-slow-carlo-point-oregano
 ```
 ### Code
-```pwsh
+```powershell
 function New-PassPhrase {
     <#
     .SYNOPSIS
