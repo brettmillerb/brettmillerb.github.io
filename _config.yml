@@ -2,7 +2,7 @@
 title:            Brett Miller
 tagline:          'Blog'
 description:      'System Administrator<br> Powershell Antics </br> Tech Poking'
-url:              https://brettmillerb.github.io
+url:              https://millerb.co.uk
 baseurl:          ''
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
