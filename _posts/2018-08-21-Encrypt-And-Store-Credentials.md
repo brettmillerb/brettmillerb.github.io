@@ -13,9 +13,9 @@ I seen a post a long while back on [Idera, to store multiple credentials](http:/
 
 Yes, there's a thousand different ways to store passwords and the passwords to your passwords but security isn't always convenient and should be secured with MFA so it quickly becomes tiresome to retrieve and store passwords.
 
-<!--more-->
-
 Setting security aside for one minute, this is my take on a multi-password store which I can quickly access saving me a tonne of time on a daily basis.
+
+<!--more-->
 
 ### New-MultiPass
 
