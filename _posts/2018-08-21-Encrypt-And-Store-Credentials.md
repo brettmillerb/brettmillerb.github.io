@@ -22,7 +22,7 @@ Setting security aside for one minute, this is my take on a multi-password store
 Using this function you can create a credential file for as many accounts as you like, it then encrypts and stores the credentials in the Path specified.
 
 ```powershell
-New-MultiPass -Path C:\users\corbyn.dallas\desktop -Name ADAdmin, O365Admin, Other
+New-MultiPass -Path C:\users\corbyn.dallas\desktop -Name LeeLoo, Korben -Force
 ```
 
 ### Get-MultiPass
