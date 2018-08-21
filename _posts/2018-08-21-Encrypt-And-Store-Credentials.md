@@ -2,6 +2,8 @@
 title: Store Encrypted Credentials For Easy Recovery
 summary: Bored with typing passwords? Use a secure cred store and retrieve them easily.
 
+excerpt_separator: <!--more-->
+
 tags:
     - Powershell
     - Password Management
@@ -10,6 +12,8 @@ tags:
 I seen a post a long while back on [Idera, to store multiple credentials](http://community.idera.com/powershell/powertips/b/tips/posts/multipass-securely-storing-multiple-credentials) for easy retrieval and store them in a secure manner.
 
 Yes, there's a thousand different ways to store passwords and the passwords to your passwords but security isn't always convenient and should be secured with MFA so it quickly becomes tiresome to retrieve and store passwords.
+
+<!--more-->
 
 Setting security aside for one minute, this is my take on a multi-password store which I can quickly access saving me a tonne of time on a daily basis.
 
