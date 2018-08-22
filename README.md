@@ -1,167 +1,117 @@
-# Hydeout
+### Brett Miller - Blog
+[https://millerb.co.uk](https://millerb.co.uk)
 
-Hydeout updates the original [Hyde](https://github.com/poole/hyde)
-theme for [Jekyll](http://jekyllrb.com) 3.x and adds new functionality.
+### Theme
+I opted for the Hydeout theme, nice and clean and fairly customisable once you get to grips with Jekyll.
 
-![Desktop](/_screenshots/1.png?raw=true)
-<img alt="Mobile home page" src="/_screenshots/2.png?raw=true" width="300px" />
-<img alt="Mobile post page" src="/_screenshots/3.png?raw=true" width="300px" />
+[Hydeout Theme](https://github.com/fongandrew/hydeout) by Andrew Fong.
 
-### Usage
+### Customisations
+#### Sidebar Links
+Added additional links to [/_includes/sidebar-icon-links](/_includes/sidebar-icon-links.html) using the same format. There may have been an easier way to do this.
 
-Hydeout is available as the `jekyll-theme-hydeout` Ruby Gem.
-Add `gem "jekyll-theme-hydeout", "~> 3.4"` to your Gemfile and run
-`bundle install`.
+These needed corresponding .svg files in [/_includes/svg](/_includes/svg) which I got from [Simple Icons](https://simpleicons.org/)
 
-If you're installing on Github pages, you may also have to add
-`remote_theme: fongandrew/hydeout` to your `_config.yml`. [See the Github
-instructions for more details.](https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site/)
+### Config.yml
+Variables in the Config.yml can be access via `{{ site.variable }}` so you can use the liquid tags throughout the other files.
 
-Hydeout uses pagination, so if you have an `index.md`, you'll need to swap
-it with an `index.html` that uses the `index` layout:
+e.g. `{{ site.github.repo }}` is used in the nav links to link to my github profile.
 
-```
----
-layout: index
-title: Home
----
-```
+### Layout/Design
+#### Variables
+Alot of the design elements are stored in [/_sass/hydeout/_variables.scss](/_sass/hydeout/_variables.scss) and define colours of text and other elements.
 
-You'll also need to add a setting to `_config.yml` telling Jekyll how many posts
-to include per page (e.g. `paginate: 5`).
-
-### Keep It Simple
-
-In keeping with the original Hyde theme, Hydeout aims to keep the overall
-design lightweight and plugin-free. JavaScript is currently limited only
-to Disqus and Google Analytics (and is only loaded if you provide configuration
-variables).
-
-Hydeout makes heavy use of Flexbox in its CSS. If Flexbox is not available,
-the CSS degrades into a single column layout.
-
-### Customization
-
-Hydeout replaces Hyde's class-based theming with the use
-of the following SASS variables:
+#### Layout
+By default the hydeout theme comes with a sticky sidebar setting so you can have the content of your sidebar at the bottom `$sidebar-sticky: true !default;` which is defined in the `_variables.scss` and used in the [/_sass/hydeout/_layout.scss](/_sass/hydeout/_layout.scss).
 
 ```scss
-$sidebar-bg-color: #202020 !default;
-$sidebar-sticky: true !default;
-$layout-reverse: false !default;
-$link-color: #268bd2 !default;
-```
+/* -----------------------------------------------------------
+  Sticky sidebar
 
-To override these variables, create your own `assets/css/main.scss` file.
-Define your own variables, then import in Hydeout's SCSS, like so:
+  Set $sidebar-stick variable to affix sidebar contents to the
+  bottom of the sidebar in tablets and up.
+----------------------------------------------------------- */
+
+@if $sidebar-sticky {
+  @media (min-width: $large-breakpoint) {
+    body {
+      align-items: flex-end;
+    }
+  }
+}
+```
+I added another variable to the variables file `$sidebar-center: true !default;` and changed the css layout to align center
 
 ```scss
----
-# Jekyll needs front matter for SCSS files
----
+/* -----------------------------------------------------------
+  Center sidebar
 
-$sidebar-bg-color: #ac4142;
-$link-color: #ac4142;
-$sidebar-sticky: false;
-@import "hydeout";
+  Set $sidebar-center variable to center sidebar contents
+  in tablets and up.
+----------------------------------------------------------- */
+
+@if $sidebar-center {
+  @media (min-width: $large-breakpoint) {
+    body {
+      align-items: center;
+    }
+  }
+}
 ```
+This looked neater to me on desktop/laptop screens and didn't have much bearing on mobile layout.
 
-See the [_variables](_sass/hydeout/_variables.scss) file for other variables
-you can override.
+#### Fonts
+There is a section in [/_sass/hydeout/_layout.scss](/_sass/hydeout/_layout.scss) which defines the font used for the Site Title.
 
-You can see the full set of partials you can replace in the
-[`_includes`](_includes) folder, but there are a few worth noting:
+Changing the `.site-title` font-family to `montserrat, sans-serif`
 
-* `_includes/copyright.html` - Insert your own copyright here.
+```scss
+#sidebar {
+  flex: 0 0 auto;
+  padding: $section-spacing;
 
-* `_includes/custom-head.html` - Insert custom head tags (e.g. to load your
-  own stylesheets)
+  .site-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+    font-size: $large-font-size;
+    text-align: center;
+    color: rgba(255,255,255,.75);
+    margin-top: 0;
+    margin-bottom: $heading-spacing;
 
-* `_includes/custom-foot.html` - Insert custom elements at the end of the
-  body (e.g. for custom JS)
+    a {
+      color: inherit;
+      &:hover { color: $sidebar-title-color; }
+    }
 
-* `_includes/custom-nav-links.html` - Additional nav links to insert at the
-  end of the list of links in the sidebar.
+    .back-arrow { margin-right: 0.5rem; }
+  }
+}
+```
+You also have to change the setting in [/_includes/font-includes.html](/_includes/font-includes.html)
 
-  Pro-tip: The `nav`s in the sidebar are flexboxes. Use the `order` property
-  to order your links.
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+```
+#### Sidebar
+Aligning the site-title is in the same place as the font settings [/_sass/hydeout/_layout.scss](/_sass/hydeout/_layout.scss) then algining the rest of the content centrally had to be done for each element in the CSS
 
-* `_includes/custom-icon-links.html`- Additional icon links to insert at the
-  end of the icon links at the bottom of the sidebar. You can use the `order`
-  property to re-order.
+```scss
+#sidebar {
+    .site-title {
+      font-size: 3.25rem;
+      text-align: center;
 
-* `_includes/favicons.html` - Replace references to `favicon.ico` and
-  `favicon.png` with your own favicons references.
+      a { color: $sidebar-title-color; }
+      .back-arrow { display: none; }
+    }
 
-* `_includes/font-includes.html` - The Abril Fatface font used for the site
-  title is loaded here. If you're overriding that font in the CSS, be sure
-  to also remove the font load reference here.
+    p.lead, header ~ * {
+      display: block;
+    }
 
-### New Features
-
-* Hydeout adds a new tags page (accessible in the sidebar). Just create a
-  new page with the tags layout:
-
-  ```
-  ---
-  layout: tags
-  title: Tags
-  ---
-  ```
-
-* Hydeout adds a new "category" layout for dedicated category pages.
-  Category pages are automatically added to the sidebar. All other pages
-  must have `sidebar_link: true` in their front matter to show up in
-  the sidebar. To create a category page, use the `category` layout"
-
-  ```
-  ---
-  layout: category
-  title: My Category
-  ---
-
-  Description of "My Category"
-  ```
-
-* You can control how pages are sorted by using the `sidebar_sort_order`
-  parameter in the front matter. This works for both category and non-category
-  pages, although non-category pages will always come first. Take a look at
-  [`_includes/sidebar-nav-links.html`](./_includes/sidebar-nav-links.html) if
-  you want to customize this behavior.
-
-  ```
-  ---
-  layout: page
-  title: My page
-  sidebar_sort_order: 123
-  ---
-
-  Some content.
-  ```
-
-* A simple redirect-to-Google search is available. Just create a page with
-  the `search` layout.
-
-  ```
-  ---
-  layout: search
-  title: Google Search
-  ---
-  ```
-
-* Disqus integration is ready out of the box. Just add the following to
-  your config file:
-
-  ```yaml
-  disqus:
-    shortname: my-disqus-shortname
-  ```
-
-  If you don't want Disqus or want to use something else, override
-  `comments.html`.
-
-* For Google Analytics support, define a `google_analytics` variable with
-  your property ID in your config file.
-
-There's also a bunch of minor tweaks and adjustments throughout the
-theme. Hope this works for you!
+    header ~ nav {
+      display: flex;
+    }
+  }
+```
