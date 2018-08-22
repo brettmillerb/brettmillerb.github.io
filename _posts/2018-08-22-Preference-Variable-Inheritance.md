@@ -57,11 +57,11 @@ Invoke-Command -ScriptBlock $scriptblock -ArgumentList 'testing string' -Verbose
 ```
 This did not trigger the verbose output in the scriptblock as intended.
 
-My initial thought was maybe the scriptblock needs `[cmdletbinding()]` to access the verbose stream but that didn't make sense.
+My initial thought was maybe the scriptblock needs `[cmdletbinding()]` to access the verbose parameters to bind to them but that didn't make sense.
 
 ### Solution
 
-Seems that this form of inheritance as the scriptblock is being run within the session of the remote machine so [Chris Gardner](https://twitter.com/HalbaradKenafin) gave me the solution that setting the `$VerbosePreference` within the scriptblock would trigger the verbose output from the remote machine.
+Seems that this form of inheritance doesn't work as the scriptblock is being run within the session of the remote machine so [Chris Gardner](https://twitter.com/HalbaradKenafin) gave me the solution that setting the `$VerbosePreference` within the scriptblock would trigger the verbose output from the remote machine.
 
 ```powershell
 $scriptblock = {
