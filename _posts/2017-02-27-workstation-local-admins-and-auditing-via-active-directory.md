@@ -44,7 +44,7 @@ The user requesting the local admin access then has their AD account added as a 
 
 In order for the user to inherit the required rights we use Group Policy to add the newly created group to the Local Administrators group on the users workstation.
 
-![GPP NewGroup](/_screenshots/LocalAdminGPO.png)
+![GPP NewGroup](/assets/img/LocalAdminGPO.png)
 
 We can use this single group policy setting to add all groups created in the same fashion to the corresponding local admin group on the workstations by specifying the `%computername%` environment variable and by ensuring we have the two `Delete All Member(s)` boxes ticked we can ensure people aren't being added directly to the groups on their workstations.
 

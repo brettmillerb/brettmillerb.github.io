@@ -18,19 +18,19 @@ I thought this was a good idea and immediately set up my TweetDeck to have a col
 
 You can log in to Microsoft Flow by going to <https://flow.microsoft.com> and logging in with your O365 account where you are presented with quite a bit of information on how to create flows and templates that are provided for you to use straight away.
 
-![Flow Templates](/_screenshots/FlowTemplates.png)
+![Flow Templates](/assets/img/FlowTemplates.png)
 
 Looking at the different connectors from the Navigation bar and clicking on the Twitter connector shows you some examples of triggers that can be used to start a flow and one that piqued my interest was the push notifications so that I could be notified on my phone when the hashtag was used and respond quite quickly.
 
-![Flow Push](/_screenshots/flow-push.png)
+![Flow Push](/assets/img/flow-push.png)
 
 Click on the relevant trigger and it will take you to the trigger settings so you can select a hashtag or keywords to use as the trigger. You will have to log in to Twitter to enable this.
 
-![Flow Settings - 1](/_screenshots/FlowSettings-1.png)
+![Flow Settings - 1](/assets/img/FlowSettings-1.png)
 
 Enter the hashtag that you would like to use as the trigger and click the Create Flow. This will then take you to the flow that has been configured. You can customise this with a description and add some further dynamic content to the push notification such as the user who has posted and the text so you can see the content of the tweet immediately.
 
-![FlowAdvancedSettings](/_screenshots/FlowAdvancedSettings.png)
+![FlowAdvancedSettings](/assets/img/FlowAdvancedSettings.png)
 
 This works quite well but in order to receive push notifications you need to have the Microsoft Flow app installed on your mobile device. I am testing sending a Teams Channel notification on the hashtag being used so that I get a Teams toast notification so it's immediately apparent whilst working on my laptop.
 

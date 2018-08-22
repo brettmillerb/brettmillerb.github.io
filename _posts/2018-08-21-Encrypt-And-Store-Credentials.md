@@ -22,7 +22,7 @@ Setting security aside for one minute, this is my take on a multi-password store
 Using this function you can create a credential file for as many accounts as you like, it then encrypts and stores the credentials in the Path specified.
 
 ```powershell
-New-MultiPass -Path C:\users\corbyn.dallas\desktop -Name LeeLoo, Korben -Force
+New-MultiPass -Path C:\users\korben.dallas\desktop -Name LeeLoo, Korben -Force
 ```
 
 ### Get-MultiPass
@@ -30,7 +30,7 @@ New-MultiPass -Path C:\users\corbyn.dallas\desktop -Name LeeLoo, Korben -Force
 You can then retrieve the stored passwords from the location for use in Powershell console, scripts all day long.
 
 ```powershell
-$multipass = Get-MultiPass -Path C:\Support\MultiPass.xml
+$multipass = Get-MultiPass -Path C:\users\korben.dallas\desktop\MultiPass.xml
 ```
 Then access these through dot notation from the variable to pass to cmdlets or scripts.
 

@@ -46,7 +46,7 @@ Running it again shows you it's no longer using SSL3
 [System.Net.ServicePointManager]::SecurityProtocol
 Tls12
 ```
-If you don't want to set this for every session then you can enable the stronger cryptographic protocols for all .NET applications on your system with the following which I found [on John Louros' blog](https://www.johnlouros.com/blog/enabling-strong-cryptography-for-all-dot-net-applications)
+If you don't want to set this for every session then you can enable the stronger cryptographic protocols for all .NET applications on your system with the following which I found [on John Louros' blog](https://www.johnlouros.com/blog/enabling-strong-cryptography-for-all-dot-net-applications).
 
 ```powershell
 #set strong cryptography on 64 bit .Net Framework (version 4 and above)

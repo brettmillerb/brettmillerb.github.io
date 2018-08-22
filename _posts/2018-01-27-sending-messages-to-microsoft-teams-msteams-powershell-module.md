@@ -20,17 +20,17 @@ If you've not played with the webhooks yet, they are really easy to setup.
 
 Browse to the Team you wish to receive the notifications and then select a channel. Click the three dots for the options and select Connectors
 
-![TeamsConnector](/_screenshots/TeamsConnector.png)
+![TeamsConnector](/assets/img/TeamsConnector.png)
 
 This will take you to the connectors section where you have a whole host of connectors you can add from 3rd party providers to relay messages to your Teams channels.
 
 Find and select the Incoming webhook from the list of connectors.
 
-![Incoming Webhook](/_screenshots/IncomingWebhook.png)
+![Incoming Webhook](/assets/img/IncomingWebhook.png)
 
 click the Configure Button and give your Webhook a name and you can upload your own image which will be displayed with each message in the channel.
 
-![Configure Webhook](/_screenshots/ConfigureWebhook.png)
+![Configure Webhook](/assets/img/ConfigureWebhook.png)
 
 Once this has been entered and you click Create you will be presented with a Webhook URL which you will use in your scripts for interacting with your Webhook. Keep this safe and don't commit it to public Git. Yes I did.
 
@@ -94,7 +94,7 @@ The only function required to be used is the `New-TeamsMessage` function and ca
 
 `New-TeamsMessage -Message 'test message for teams' -Color Red -WebhookURI $WebhookURI`
 
-![SimpleTeamsMessage](/_screenshots/SimpleTeamsMessage.png)
+![SimpleTeamsMessage](/assets/img/SimpleTeamsMessage.png)
 
 #### Detailed Message.
 
@@ -129,7 +129,7 @@ Sending the information
 New-TeamsMessage @params
 ```
 
-![DetailedTeamsMessage](/_screenshots/DetailedTeamsMessage.png)
+![DetailedTeamsMessage](/assets/img/DetailedTeamsMessage.png)
 
 #### Adding Buttons
 
@@ -143,7 +143,7 @@ New-TeamsMessage @params -Button {
 }
 ```
 
-![DetailedTeamsMessagewithButtons](/_screenshots/DetailedTeamsMessage-buttons.png)
+![DetailedTeamsMessagewithButtons](/assets/img/DetailedTeamsMessage-buttons.png)
 
 #### Outgoing Webhooks
 
