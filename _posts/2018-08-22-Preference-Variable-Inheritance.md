@@ -90,4 +90,4 @@ It turns out that it wasn't even my code that was the issue. I was attempting to
 #### Update
 It appears that this was raised by [Chris Bergmeister (MVP)](https://twitter.com/CBergmeister) and was discussed on Github around the default behavior of the preference variables in a scriptblock.
 
-It's brief but outlines what I went through above:  https://github.com/PowerShell/PowerShell/issues/4040
+It's brief but outlines what I went through above:  [https://github.com/PowerShell/PowerShell/issues/4040](https://github.com/PowerShell/PowerShell/issues/4040)
