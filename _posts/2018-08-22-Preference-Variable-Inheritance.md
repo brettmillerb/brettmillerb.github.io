@@ -86,3 +86,8 @@ VERBOSE: Some other Verbosity
 I think that everyone who picks up powershell has been tripped up with scope issues in the past. I know that I have in the past and more than likely will again in the future but this worked a treat.
 
 It turns out that it wasn't even my code that was the issue. I was attempting to run my commands in the old location of the agent I was interacting with so setting the new location worked and I learned something about scopes in the process.
+
+#### Update
+It appears that this was raised by [Chris Bergmeister (MVP)](https://twitter.com/CBergmeister) and was discussed on Github around the default behavior of the preference variables in a scriptblock.
+
+It's brief but outlines what I went through above:  https://github.com/PowerShell/PowerShell/issues/4040
