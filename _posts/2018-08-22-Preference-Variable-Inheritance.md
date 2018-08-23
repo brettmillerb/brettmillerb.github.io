@@ -2,7 +2,7 @@
 title: Inheriting Preference Variables into Scriptblocks
 summary: Inheriting preference variables from parent scopes
 
-excerpt_separator: <!--more-->
+excerpt_separator: <!--Read more-->
 
 tags:
     - Powershell
@@ -15,7 +15,7 @@ So I recently created a module to using Powershell sessions to invoke commands o
 ### Preference Variables not inherting from Parent Scope
 I hit an issue during testing and was trying to diagnose the issue so I added some `Write-Verbose` commands to assist with this except the verbose preference was not inheriting from the parent scope.
 
-<!--more-->
+<!--Read more-->
 
 So I've been doing powershell long enough to know that calling a function should inherit the parent scope preference variables e.g.:
 
