@@ -51,6 +51,9 @@ kramdown:
 disqus:
   shortname:      millerb
 
+google-analytics:
+    id:           UA-124494940-1
+
 # Variables for nav links
 github:
   repo:           https://github.com/brettmillerb
