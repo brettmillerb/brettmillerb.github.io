@@ -144,3 +144,7 @@ Convert-VideoToGif -VideoFile .\myootput.mp4 -FrameRate 3 -OutputFile swankygif
 ![My Swanky Gif](/assets/img/anotherone.gif)
 
 #### I don't even have any of this on github but will create a repo to throw everything if anyone is interested.
+
+Some Blog Posts I utilised for the syntax:
+ - Giphy Engineering - https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
+ - Ubitux - http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
