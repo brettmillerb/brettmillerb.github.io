@@ -2,10 +2,12 @@
 title: PSDay 2018
 summary: One Day PowerShell Conference in London
 
+excerpt_separator: <!--more-->
+
 tags:
-	- Powershell
-	- Conference
-	- PSDay
+    - PowerShell
+    - PSDay
+    - Conference
 ---
 
 I’m sat on the train back from London after PSDay 2018 reflecting on what was a really good conference, the sessions, the speakers but most of all the community and attendees of the conference.
