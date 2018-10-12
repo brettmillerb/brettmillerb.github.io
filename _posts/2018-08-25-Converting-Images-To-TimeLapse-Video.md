@@ -1,14 +1,13 @@
 ---
-title: PSDay 2018
-summary: One Day Powershell Conference in London
+title: Converting Images to Video & GIF with FFMPEG
+summary: Create a timelapse video or gif from still images utilising ffmpeg
 
 excerpt_separator: <!--more-->
 
 tags:
-	- Powershell
-	- PSDay
-	- Conference
-	- London
+    - Powershell
+    - Timelapse
+    - ffmpeg
 ---
 
 At my previous place of work I was asked to look into the feasability of adding a timelapse options to our service catalogue so that we could consolidate 3rd party usage and save money.
