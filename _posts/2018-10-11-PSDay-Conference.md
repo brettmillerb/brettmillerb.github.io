@@ -12,6 +12,8 @@ tags:
 
 I’m sat on the train back from London after PSDay 2018 reflecting on what was a really good conference, the sessions, the speakers but most of all the community and attendees of the conference.
 
+<!--more-->
+
 ### Sessions
 #### Building Better Bricks: Module Design and Development Best Practice - Chris Gardner (@halbarad)
 This was a talk that I knew Chris had been doing the rounds with and I checked out the slides on Github but it was still something I wanted to see as someone who creates modules there’s always improvements that can be made e.g. more Pester tests, using CI/CD better documentation or help.
