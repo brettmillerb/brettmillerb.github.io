@@ -10,7 +10,7 @@ tags:
     - Conference
 ---
 
-I’m sat on the train back from London after PSDay 2018 reflecting on what was a really good conference, the sessions, the speakers but most of all the community and attendees of the conference.
+I’m sat on the train back from London after PSDay 2018 reflecting on what was a really good conference, the sessions, the speakers, learning about topics that you wouldn't necessarily have exposure to but most of all the conversations, sharing of ideas and spending time with attendees who are enthused about PowerShell and technology.
 
 <!--more-->
 
