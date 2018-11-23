@@ -1,8 +1,6 @@
 ---
 title: GitOps - Git For Ops People
 summary: Start using Git, it's guaranteed to save your bacon!
-categories:
-    - GitOps - Git For Ops People
 
 excerpt_separator: <!--more-->
 
@@ -11,9 +9,6 @@ tags:
     - GitOps
     - PowerShell
 ---
-
-* TOC
-{:toc}
 
 I want to show you that even as someone who works solely in Ops or Support, embracing Git as a tool will save you time, effort and it doesn't have to be as complicated as it first seems.
 
@@ -27,6 +22,9 @@ I want to show you that even as someone who works solely in Ops or Support, embr
 > My scripts are only 20 lines long, why do I need source/version control?
 
 <!--more-->
+
+* TOC
+{:toc}
 
 ## The Journey to Becoming a Git User and Advocate
 
