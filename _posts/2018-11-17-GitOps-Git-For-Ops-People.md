@@ -26,6 +26,8 @@ I want to show you that even as someone who works solely in Ops or Support, embr
 
 > My scripts are only 20 lines long, why do I need source/version control?
 
+<!--more-->
+
 ## The Journey to Becoming a Git User and Advocate
 
 I am from an Ops background, I started at 1st line helpdesk, 2nd line support, help desk team lead then moved into a SysAdmin role where I started to learn PowerShell and write some scripts to help me administer Active Directory.
@@ -37,8 +39,6 @@ I had to learn about loops, pipelines, functions and usually error handling. My 
 ## Saving Scripts as a New Version After Every Change - Eureka-ka-ka-ka!!
 
 When I was happy a script **mostly** worked, I would save it incrementing the version number in the file name `File > Save As > MyAdScript-v0.3.ps1`
-
-<!--more-->
 
 Then my folder structure looked something similar to this:
 
