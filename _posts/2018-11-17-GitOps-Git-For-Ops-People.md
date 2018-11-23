@@ -13,6 +13,7 @@ tags:
 I want to show you that even as someone who works solely in Ops or Support, embracing Git as a tool will save you time, effort and it doesn't have to be as complicated as it first seems.
 
 ## If you answer Yes to any of the following then this blog post is for you:
+{: .no_toc}
 > Git seems daunting, why do I need to learn new software when what I currently do works?
 
 > I'm not a developer so why do I need developer tools?
