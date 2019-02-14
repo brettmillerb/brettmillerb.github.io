@@ -33,7 +33,7 @@ Mine was trying to delete disabled computer accounts from a specific OU in AD du
 Get-ADComputer -filter * -SearchBase "CN=Computers,DC=millerb,DC=co,DC=uk" |
     Where-Object {$_.enabled -eq "$false"} | Remove-ADComputer
 ```
-And to my surprise when I checked the OU the and all of the Enabled machines had disappeared!!!! **Ruh Oh!**
+Imagine my surprise when I checked the OU the and all of the Enabled machines had disappeared!!!! **Ruh Oh!**
 
 There's an apparent difference to the way boolean values are determined when you wrap them in quotes.
 
@@ -70,7 +70,7 @@ Once they are defined you need to do some pre-checks to ensure it is able to bui
 Start-LabHostConfiguration -Verbose
 ```
 #### Building your lab environment
-When you Start your lab configuration it will attempt to download and ISO's that are required in order to do that. You can make sure that the media is available and download this in advance.
+When you Start your lab configuration it will attempt to download any ISO's that are required in order to do that. You can make sure that the media is available and download this in advance.
 #### Show the list of available media
 ```powershell
 Get-LabMedia
