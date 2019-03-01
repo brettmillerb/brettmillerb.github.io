@@ -390,7 +390,7 @@ Keyword:    gist
 
 This then allows you to search the site specified in the location with the search term defined at runtime.
 
-`gist msteams` will take you to https://gist.github.com/search?utf8=%E2%9C%93&q=language%3APowerShell+msteams
+`gist msteams` will take you to [https://gist.github.com/search?utf8=%E2%9C%93&q=language%3APowerShell+msteams](https://gist.github.com/search?utf8=%E2%9C%93&q=language%3APowerShell+msteams)
 
 
-`gh msteams` will take you to https://github.com/search?q=language%3Apowershell+msteams
+`gh msteams` will take you to [https://github.com/search?q=language%3Apowershell+msteams](https://github.com/search?q=language%3Apowershell+msteams)
