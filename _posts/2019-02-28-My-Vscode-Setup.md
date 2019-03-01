@@ -304,7 +304,7 @@ I won't go into a load of detail on the Extensions as they are pretty well known
 #### EditorServicesCommandSuite
 EditorServicesCommandSuite is a Powershell Module which plugs into VsCode and offers additional powershell commands when writing scripts. Written by [Patrick Meinecke (@SeeminglyScienc)](https://twitter.com/SeeminglyScienc)
 
-One of the best functions in the module is `ConvertTo-SplatExpression` which takes a really long command and parameters and converts it to a splat for easier reading and most importantly no bloody backticks.
+One of the best functions in the module is `ConvertTo-SplatExpression` which takes a really long command and parameters and converts it to a splat for easier reading and most importantly it's not a fucking backtick.
 
 See it in action in my tweet and this Twitter thread:
 
