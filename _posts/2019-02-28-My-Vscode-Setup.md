@@ -10,6 +10,7 @@ tags:
     - Productivity
 ---
 ### WARNING! - LONG POST ALERT
+{: .no_toc}
 
 Visual Studio code has quickly become the tool of choice amongst developers and system admins due to it's flexibility of dealing with most scripting/programming languages you can throw at it. The fact that it is cross platform and is now being actively developed in preference to Powershell ISE means that it's hard to ignore such a brilliant editor.
 
