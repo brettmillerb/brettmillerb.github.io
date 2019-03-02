@@ -235,6 +235,10 @@ I won't post all of my snippets here as they are largely unreadable to humans bu
 
 You get the idea with the examples above and and there is a [community snippets project on Github](https://github.com/PowerShell/vscode-powershell/blob/master/docs/community_snippets.md) which allows people to share and upload there own snippets that they use which others may find useful.
 
+This blog post was actually created from a snippet as I have a jekyll frontmatter snippet in markdown so I can quickly create the core content of a blog post.
+
+I have added a [gist of my snippets](https://gist.github.com/brettmillerb/73943002436e60fe2047af5278ca7190) for Powershell in case ayone wants to utilise any of them.
+
 ## Keyboard Shortcuts
 
 There are literally hundreds of keyboard shortcuts in VsCode and learning them all is a near impossibility but in order to allow myself to become really productive I have learned alot of the really useful keyboard shortcuts to ensure I don't have to constantly focus shift to using my mouse when writing code. You can get at the keyboard shortcuts from the command pallette via `F1` or `Ctrl+Shift+P` then typing keyboard.
@@ -373,6 +377,10 @@ I haven't really ventured into git aliases very much but the one I do use makes 
 git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
 So perrrty!
+
+```bash
+git logline
+```
 
 ![git logline](/assets/img/gitlogline.png)
 
