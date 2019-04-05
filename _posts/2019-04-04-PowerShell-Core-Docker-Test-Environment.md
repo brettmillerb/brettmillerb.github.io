@@ -75,7 +75,7 @@ Once it has downloaded you can launch the docker container interactively
 docker run -it mcr.microsoft.com/windows/servercore
 ```
 
-```pwsh
+```powershell
 C:\> $psversiontable
 '$psversiontable' is not recognized as an internal or external command,
 operable program or batch file.
