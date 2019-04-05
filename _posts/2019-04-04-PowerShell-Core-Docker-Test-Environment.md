@@ -36,7 +36,9 @@ choco info docker-desktop
 # This installs Docker-Cli, Docker Compose & kubectl command line
 choco install docker-desktop 
 ```
+
 Once it's installed you can open `pwsh` and check everything is there
+
 ```powershell
 PS C:\> docker --version
 Docker version 18.09.2, build 6247962
@@ -57,19 +59,22 @@ I performed a search for the powershell docker images on my favourite search eng
 docker pull mcr.microsoft.com/powershell
 ```
 
-This won't take too long and because docker for windows generally starts in linux container mode so you will likely end up with an Ubuntu 18.04 image with PowerShell Core. The images have just been updated to PowerShell Core 6.2 at the time of writing.
+This won't take too long and because docker for windows generally starts in linux container mode you will likely end up with an Ubuntu 18.04 image with PowerShell Core. The images have just been updated to PowerShell Core 6.2 at the time of writing.
 
 But what if you want a Windows image? You will need to right click the docker icon in your system tray and click `Switch to Windows Containers` this will restart docker.
 
 You can then download the image for Windows Server Core. It can take a little while as it's around 4.7Gb if my memory serves me right.
+
 ```powershell
 docker pull mcr.microsoft.com/windows/servercore
 ```
+
 Once it has downloaded you can launch the docker container interactively
 
 ```powershell
 docker run -it mcr.microsoft.com/windows/servercore
 ```
+
 ```pwsh
 C:\> $psversiontable
 '$psversiontable' is not recognized as an internal or external command,
@@ -85,6 +90,7 @@ C:\> pwsh.exe
 'pwsh.exe' is not recognized as an internal or external command,
 operable program or batch file.
 ```
+
 ### Say what now?!
 D'oh!!! Obviously this is just a basic Windows Server Core image.
 
@@ -107,6 +113,7 @@ WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
+
 This is fine if you want an image which needs Windows PowerShell but I want to make sure I am testing my stuff on PowerShell Core and installing to Windows is more difficult than say `sudo apt-get install -y powershell` on Ubuntu.
 
 ### Off to find PowerShell Core
@@ -121,17 +128,19 @@ Some quick search engine wizardry later I ended up on the [official docs](https:
 ```powershell
 docker build [OPTIONS] PATH | URL | -
 ```
+
 You can also use the command line
+
 ```powershell
 PS C:\> docker build --help
 
 Usage:	docker build [OPTIONS] PATH | URL | -
 ```
+
 ### Building your image
 Now that we have pulled an image from the docker hub, we have a docker file from Microsoft's official repository and the command line to build our image we just need to stick it all together.
 
 Copy the dockerfile to a file and save it locally on your machine. You can build it from the URL too but let's not get carried away with ourselves.
-
 
 ```powershell
 # Note: This does not have a filetype and is just called Dockerfile
@@ -143,9 +152,11 @@ PS C:\> Set-Location c:\docker\servercore
 # -t is tags so you can tag your image with a friendly name. Docker will give you a random name otherwise.
 PS C:\> docker build . -t brett/pwsh
 ```
+
 ![docker build](/assets/img/docker_build.png)
 
 Once this has built you will be able to see the images available to you.
+
 ```powershell
 PS C:\> docker image ls
 
@@ -155,6 +166,7 @@ mcr.microsoft.com/windows/servercore   latest      ea9f7aa13d03   2 months ago  
 ```
 
 Whenever you need to access this as a container you can run an interactive session
+
 ```powershell
 PS C:\> docker run -it brett/pwsh
 
@@ -225,11 +237,13 @@ RUN pwsh `
           choco install git -y; `
           refreshenv"
 ```
+
 Then run the build task again.
 
 ```powershell
 PS C:\> docker build . -t brett/pwsh
 ```
+
 Now when ever you want a quick docker container to test something in a fresh environment you can spin up a windows container which has Chocolatey and Git installed and you're good to go in a matter of minutes.
 
 The full docker file is here: [Docker File](https://gist.github.com/brettmillerb/fa4c18be41acc69cc19f97ad9899d2c3)
