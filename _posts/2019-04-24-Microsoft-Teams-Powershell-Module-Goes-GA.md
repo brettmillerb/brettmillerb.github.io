@@ -12,6 +12,10 @@ tags:
 
 I have been playing with the Microsoft Teams module for quite some time and undeniably, even though it wasn't GA, it was disappointing and often required lots of wrapper functions for what I would have expected to be native functionality.
 
+Now that it's General Availability let's see what changes have been made
+
+<!--more-->
+
 ### Welcome Changes in the Release Notes
 
 ```yaml
