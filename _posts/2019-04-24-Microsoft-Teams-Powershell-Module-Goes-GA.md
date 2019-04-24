@@ -19,11 +19,15 @@ Now that it's General Availability let's see what changes have been made
 ### Welcome Changes in the Release Notes
 
 ```yaml
-- Connect-MicrosoftTeams allows you to specify a Teams Government Environment (-TeamsEnvironmentName) that your organization is homed in. 
+- Connect-MicrosoftTeams allows you to specify a Teams Government Environment
+(-TeamsEnvironmentName) that your organization is homed in. 
 
-- Get-Team allows you to specify new filter and selection criteria to identify specific teams based off of new criteria, including the Visibility or Archived state of the teams. 
+- Get-Team allows you to specify new filter and selection criteria
+to identify specific teams based off of new criteria,
+including the Visibility or Archived state of the teams. 
 
-The following beta cmdlets will not be available in future module releases, as the same functionality these cmdlets provided has been integrated into the Get-Team and Set-Team cmdlets: 
+The following beta cmdlets will not be available in future module releases,
+as the functionality these cmdlets provided is integrated into the Get-Team and Set-Team cmdlets
 
 - Get-TeamFunSettings 
 - Get-TeamGuestSettings 
@@ -48,10 +52,10 @@ You should then see any older and the GA version of the modules.
 ```powershell
 PS C:\> Get-Module  -Name microsoftteams -ListAvailable
 
-ModuleType Version    Name                                ExportedCommands                                          
----------- -------    ----                                ----------------                                          
-Binary     1.0.0      MicrosoftTeams                      {Add-TeamUser, Get-Team, Get-TeamChannel, Get-TeamHelp...}
-Binary     0.9.6      MicrosoftTeams                      {Add-TeamUser, Get-Team, Get-TeamChannel, Get-TeamHelp...}
+ModuleType Version    Name            ExportedCommands                                          
+---------- -------    ----            ----------------                                          
+Binary     1.0.0      MicrosoftTeams  {Add-TeamUser, Get-Team, Get-TeamChannel, Get-TeamHelp...}
+Binary     0.9.6      MicrosoftTeams  {Add-TeamUser, Get-Team, Get-TeamChannel, Get-TeamHelp...}
 ```
 
 ```powershell
@@ -59,22 +63,22 @@ PS C:\> Import-Module -Name microsoftteams
 
 PS C:\> Get-Command -Module microsoftteams
 
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
-Cmdlet          Add-TeamUser                                       1.0.0      microsoftteams
-Cmdlet          Connect-MicrosoftTeams                             1.0.0      microsoftteams
-Cmdlet          Disconnect-MicrosoftTeams                          1.0.0      microsoftteams
-Cmdlet          Get-Team                                           1.0.0      microsoftteams
-Cmdlet          Get-TeamChannel                                    1.0.0      microsoftteams
-Cmdlet          Get-TeamHelp                                       1.0.0      microsoftteams
-Cmdlet          Get-TeamUser                                       1.0.0      microsoftteams
-Cmdlet          New-Team                                           1.0.0      microsoftteams
-Cmdlet          New-TeamChannel                                    1.0.0      microsoftteams
-Cmdlet          Remove-Team                                        1.0.0      microsoftteams
-Cmdlet          Remove-TeamChannel                                 1.0.0      microsoftteams
-Cmdlet          Remove-TeamUser                                    1.0.0      microsoftteams
-Cmdlet          Set-Team                                           1.0.0      microsoftteams
-Cmdlet          Set-TeamChannel                                    1.0.0      microsoftteams
+CommandType     Name                       Version    Source
+-----------     ----                       -------    ------
+Cmdlet          Add-TeamUser               1.0.0      microsoftteams
+Cmdlet          Connect-MicrosoftTeams     1.0.0      microsoftteams
+Cmdlet          Disconnect-MicrosoftTeams  1.0.0      microsoftteams
+Cmdlet          Get-Team                   1.0.0      microsoftteams
+Cmdlet          Get-TeamChannel            1.0.0      microsoftteams
+Cmdlet          Get-TeamHelp               1.0.0      microsoftteams
+Cmdlet          Get-TeamUser               1.0.0      microsoftteams
+Cmdlet          New-Team                   1.0.0      microsoftteams
+Cmdlet          New-TeamChannel            1.0.0      microsoftteams
+Cmdlet          Remove-Team                1.0.0      microsoftteams
+Cmdlet          Remove-TeamChannel         1.0.0      microsoftteams
+Cmdlet          Remove-TeamUser            1.0.0      microsoftteams
+Cmdlet          Set-Team                   1.0.0      microsoftteams
+Cmdlet          Set-TeamChannel            1.0.0      microsoftteams
 ```
 
 ### Let's connect and have a play
@@ -143,9 +147,9 @@ Another nuance I discovered whilst playing is that `-DisplayName` appears to be 
 PS C:\> Get-Team -DisplayName 'demo team'
 PS C:\> Get-Team -DisplayName 'Demo Team'
 
-GroupId                              DisplayName        Visibility  Archived  MailNickName       Description
--------                              -----------        ----------  --------  ------------       -----------
-ad52f8e5-1ed9-40c4-b1a0-0c5f6d62675e Demo Team          Public      False     DemoTeam           My team for tes...
+GroupId                              DisplayName  Visibility  Archived  MailNickName  Description
+-------                              -----------  ----------  --------  ------------  -----------
+ad52f8e5-1ed9-40c4-b1a0-0c5f6d62675e Demo Team    Public      False     DemoTeam      My team for tes...
 ```
 
 ### Pipeline Support now works 🎉
@@ -154,15 +158,15 @@ It would appear that they have now added pipeline support from the getter to the
 ```powershell
 PS C:\> Get-Team -DisplayName 'Team Excellent'
 
-GroupId                              DisplayName        Visibility  Archived  MailNickName       Description
--------                              -----------        ----------  --------  ------------       -----------
-711108ee-5809-42da-a804-a020a735ef70 Team Excellent     Private     False     msteams_245c14
+GroupId                              DisplayName     Visibility  Archived  MailNickName    Description
+-------                              -----------     ----------  --------  ------------    -----------
+711108ee-5809-42da-a804-a020a735ef70 Team Excellent  Private     False     msteams_245c14
 
 PS C:\> Get-Team -DisplayName 'Team Excellent' | Set-Team -Description '2nd test Team'
 
-GroupId                              DisplayName        Visibility  Archived  MailNickName       Description
--------                              -----------        ----------  --------  ------------       -----------
-711108ee-5809-42da-a804-a020a735ef70 Team Excellent     Private     False     msteams_245c14     2nd test Team
+GroupId                              DisplayName     Visibility  Archived  MailNickName    Description
+-------                              -----------     ----------  --------  ------------    -----------
+711108ee-5809-42da-a804-a020a735ef70 Team Excellent  Private     False     msteams_245c14  2nd test Team
 
 PS C:\> Get-Team -DisplayName 'Team Excellent' | Set-Team -AllowStickersAndMemes $false
 ```
