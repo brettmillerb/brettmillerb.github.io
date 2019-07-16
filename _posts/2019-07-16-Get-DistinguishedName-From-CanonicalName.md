@@ -196,4 +196,4 @@ What I hoped to demonstrate from this is that you don't need to get a fully work
 
 Playing with regex on some unfamiliar patterns on a semi-regular basis has taught me loads and I love tackling problems with it now. This has saved me a tonne of work in areas. Don't be afraid to start learning it, it looks scary at first but the more you do something, the easier it becoems.
 
-I'd be interested to see how other people tackle this or similar problems. 🙂
+I'd be interested to see how other people tackle this or similar problems or just get stuck into learning something by doing. 🙂
