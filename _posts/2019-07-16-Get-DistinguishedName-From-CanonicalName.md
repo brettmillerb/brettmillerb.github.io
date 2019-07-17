@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 tags:
     - PowerShell
     - ActiveDirectory
-    - tag3
+    - Regex
 ---
 
 There was a topic came up in the [Powershell Slack](https://aka.ms/psslack) earlier this evening to see if there was a way to convert the CanonicalName from Active Directory to a DistinguishedName
@@ -18,6 +18,8 @@ There was a [TechNet Script](https://gallery.technet.microsoft.com/scriptcenter/
 
 ### Crack Open The Regex ❤
 I decided about 12 - 18 months ago that I was going to double down and force myself to learn Regex. This is a prime example of something you can play with so that was my first port of call.
+
+<!--more-->
 
 ```powershell
 # My Dataset
