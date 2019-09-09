@@ -1,5 +1,5 @@
 ---
-title: Git - Reverting git branch changes the easy way
+title: Git - Reverting git Branch Changes The Easy Way
 summary: merging specific files/folders from another branch - easier than expected
 
 excerpt_separator: <!--more-->
