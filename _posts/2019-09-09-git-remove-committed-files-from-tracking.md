@@ -1,5 +1,5 @@
 ---
-title: Git - Remove Previously Committed Files From Tracking
+title: Git - Remove Previously Committed Files From Being Tracked
 summary: Accidentally Committed & Pushed Files In Your Repo?
 
 excerpt_separator: <!--more-->
