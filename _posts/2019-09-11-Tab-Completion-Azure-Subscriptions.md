@@ -24,7 +24,8 @@ Running `Get-AzSubscription` takes a while when you have lots of subscriptions
 ```
 
 ```powershell
- Measure-Command -Expression { Get-AzSubscription } | select Milliseconds, seconds
+ Measure-Command -Expression { Get-AzSubscription } |
+    Select-Object Milliseconds, seconds
 
 Milliseconds Seconds
 ------------ -------
@@ -45,12 +46,13 @@ The simple thing to do would be to define a variable in my profile and run `Get-
 
 Profile.ps1:
 ```powershell
-$subscriptions = Get-AzSubscription | Select-Object -ExpandProperty Name
+$subscriptions = Get-AzSubscription |
+    Select-Object -ExpandProperty Name
 ```
 
 Profile Load Time:
 ```powershell
-Loading personal and system profiles took 8276ms.
+Loading profiles took 8276ms.
 [16:46:58] PowerShell\7-preview>
 ```
 
@@ -70,7 +72,7 @@ $subscriptions = Get-AzSubscription -AsJob |
 
 Profile Load Time:
 ```powershell
-Loading personal and system profiles took 4629ms.
+Loading profiles took 4629ms.
 [16:58:11] PowerShell\7-preview>
 ```
 
@@ -86,7 +88,7 @@ Get-AzSubscription -AsJob | Out-Null
 
 Profile Load Time:
 ```powershell
-Loading personal and system profiles took 2565ms.
+Loading profiles took 2565ms.
 [16:58:11] PowerShell\7-preview>
 ```
 
@@ -106,10 +108,10 @@ Register-ArgumentCompleter -CommandName Set-AzContext -ParameterName Subscriptio
 }
 ```
 
-If you want to read up more on Argument Completers [Joel Sallow (Vexx32)](https://twitter.com/vexx32) has a good blog post on the available options: https://vexx32.github.io/2018/11/29/Dynamic-ValidateSet/
+If you want to read up more on Argument Completers [Joel Sallow (Vexx32)](https://twitter.com/vexx32) has a good blog post on the available options: [https://vexx32.github.io/2018/11/29/Dynamic-ValidateSet/](https://vexx32.github.io/2018/11/29/Dynamic-ValidateSet/)
 
 ### Solution
-I decided to use both the profile job and the argument completer but since the argument completer scriptblock is not invoked until the command it's being used for is run it won't affect the profile load time.
+I decided to use both the profile job and the argument completer and since the argument completer scriptblock is not invoked until the command is being used, it won't affect the profile load time or the execution time of the completion result.
 
 Profile.ps1:
 ```powershell
@@ -133,7 +135,7 @@ Register-ArgumentCompleter -CommandName Set-AzContext -ParameterName Subscriptio
 
 Profile Load Time:
 ```powershell
-Loading personal and system profiles took 2565ms.
+Loading profiles took 2565ms.
 [16:58:11] PowerShell\7-preview>
 ```
 
