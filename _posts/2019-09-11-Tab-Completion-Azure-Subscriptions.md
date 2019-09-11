@@ -137,6 +137,6 @@ Loading personal and system profiles took 2565ms.
 [16:58:11] PowerShell\7-preview>
 ```
 
-This didn't affect the profile load time at all as it uses a background job to retrieve the results and it doesn't have a perfomance impact on loading the completion result as they are already defined.
+This didn't affect the profile load time at all as it uses a background job to retrieve the results and it doesn't have a perfomance impact on loading the completion result as they are already defined and only invoked when you use the cmdlet the completer is for.
 
 No more copying and pasting subscription names to switch between Azure subscriptions 🎉
