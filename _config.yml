@@ -45,8 +45,9 @@ markdown:         kramdown
 highlighter:      rouge
 
 kramdown:
-  input:          GFM
-  hard_wrap:      false
+  input:              GFM
+  hard_wrap:          false
+  syntax-highlighter: rouge
 
 disqus:
   shortname:      millerb
