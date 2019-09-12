@@ -41,7 +41,7 @@ $default-box-shadow: $box-shadow-size
                      $box-shadow-size
                      rgba(0, 0, 0, $box-shadow-opacity);
 
-$code-font-family: Menlo, Monaco, "Courier New", monospace !default;
+$code-font-family: 'Inconsolata', monospace;
 $code-color: $gray-5 !default;
 
 // Hyde theming
