@@ -356,7 +356,7 @@ Mode                LastWriteTime         Length Name
 Open your normal `.gitconfig` file in VsCode with `PSedit .gitconfig` and add the following
 
 ```bash
-[includeIf "gitdir:C:/support/git/gitpersonal/"]
+[includeIf "gitdir/i:C:/support/git/gitpersonal/"]
 	path = ~/.gitconfig-personal
 ```
 
