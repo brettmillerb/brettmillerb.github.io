@@ -20,6 +20,8 @@ So my initial reaction when I started playing with PowerShell in Azure Functions
 
 Azure Automation is still very useful for automation and long running tasks such as reports and Azure Functions really shine when you want event driven actions.
 
+<!--more-->
+
 ### Event Driven - Say What?!
 
 Events in Azure can mean a number of things and 9/10 the first Azure Function you will create is an HTTP trigger which is a manual trigger. As you delve deeper you start seeing situations where event driven is at the forefront of what you want to react to.
