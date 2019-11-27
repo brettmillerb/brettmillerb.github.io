@@ -38,7 +38,9 @@ You can find the pre-requisites and installation instructions in the [Microsoft 
 - Azure Functions Core Tools
 - .NET Core SDK - _I have this installed but you can avoid that with the extension bundles_ 
 
-You can also use dev containers to run and debug your functions but there is no official docker image for PowerShell Azure functions **yet**
+You can also use the Remote Development Extension and containers to run and debug your functions but there is no official docker image for PowerShell available. I have however created a post to show you how to build your own.
+
+[Developing PowerShell Azure Functions In Docker And VsCode](https://millerb.co.uk/2019/11/27/Developing-Pwsh-Az-Functions-In-Docker-And-VsCode.html)
 
 ### Create A Local Function Project
 Create a folder where your Function will be contained
