@@ -30,7 +30,7 @@ I have been spending a considerable amount of my down time watching people do li
 
 The installation requirements for Azure Functions are on [docs.microsoft.com](https://docs.microsoft.com/en-gb/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools).
 
-On both Mac and Windows this requires the Azure Functions Extension Bundle or the .NET SDK and on Windows you'll hae to install npm and node.js so not having to install anything locally is good.
+On both Mac and Windows this requires the Azure Functions Extension Bundle or the .NET SDK and on Windows you'll have to install npm and node.js so not having to install anything locally is good.
 
 ## Setting up your Workspace
 
@@ -64,7 +64,7 @@ Select the folder you want to open. You will then be presented with the list of 
 
 What you will notice however is that there are options for Azure Functions with C#, Java, Node & Python but there is no container for PowerShell Azure Functions. WTF?!
 
-Well I have fixed that by opening a Pull Request and adding a container definition which has all of the dependencies required. This is pending release at the time of writing.
+Well I have fixed that by opening a [Pull Request](https://github.com/microsoft/vscode-dev-containers/pull/153) and adding a container definition which has all of the dependencies required. This is pending release at the time of writing.
 
 To get access to these prior to release you can grab what you need directly from the [Github Repo](https://github.com/microsoft/vscode-dev-containers/tree/master/containers/azure-functions-pwsh-6/.devcontainer).
 
