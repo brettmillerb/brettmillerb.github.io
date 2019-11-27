@@ -14,12 +14,12 @@ I have been using Azure Functions for a little while and I published my initial 
 
 In this post I want to cover how to get started with Functions and a few lessons learned and I wanted to collect together the documentation I used to get up and running which at present lives in various places on the Microsoft Docs site.
 
-<!--more-->
-
 ## What are Azure Functions
 {: .no_toc}
 
 Simply put they are a serverless solution in Azure which allow you to run code without having to worry about where it is running or maintaining the underlying infrastructure.
+
+<!--more-->
 
 You can read a whole lot more about Azure Functions in the [documentation](https://docs.microsoft.com/en-gb/azure/azure-functions/functions-overview) and it can explain a lot better than I can.
 
