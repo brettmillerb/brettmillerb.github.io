@@ -102,4 +102,6 @@ WSManStackVersion              3.0
 
 Now that you have your folder opened in a container with all of the necessary tools you can start initialising your Function Project.
 
-To see how to do that you can follow this post I created [PowerShell & Azure Functions - Part 1](https://millerb.co.uk/2019/11/27/Getting-Started-Pwsh-Az-Functions-Part-1.html)
+To see how to do that you can follow this post I created to get you started:
+
+[PowerShell & Azure Functions - Part 1](https://millerb.co.uk/2019/11/27/Getting-Started-Pwsh-Az-Functions-Part-1.html)
