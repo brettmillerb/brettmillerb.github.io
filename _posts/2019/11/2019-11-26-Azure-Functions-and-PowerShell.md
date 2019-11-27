@@ -24,7 +24,7 @@ Azure Automation is still very useful for automation and long running tasks such
 
 ### Event Driven - Say What?!
 
-Events in Azure can mean a number of things and 9 times out of 10 the first Azure Function you will create is an HTTP trigger which is a manual interaction. As you delve deeper you start seeing situations where event driven is at the forefront of what you want to react to.
+Events in Azure can mean a number of things and 9 times out of 10 the first Azure Function you will create is an HTTP trigger which is a manual interaction. As you delve deeper you start seeing situations where event driven functions are at the forefront and it makes you think differently about how you manage your cloud workloads.
 
 ### Example Scenario
 
