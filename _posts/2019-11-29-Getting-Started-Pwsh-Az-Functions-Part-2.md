@@ -29,4 +29,7 @@ You can read a whole lot more about Azure Functions in the [documentation](https
 
 ## Debugging
 
-## Heading 3
+## Things that Don't Work
+
+SecureString
+Multi-Workspace Debugging
