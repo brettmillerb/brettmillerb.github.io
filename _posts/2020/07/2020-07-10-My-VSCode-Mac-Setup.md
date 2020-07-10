@@ -167,12 +167,12 @@ The above post covers pretty much everything you need to get started with that b
 
 I use Azure functions a lot, both PowerShell and C# and being able to develop these in a container without having to have the Az Functions Core tools or npm or any of the extensions installed locally is a dream. You need to check it out if you haven't already.
 
-### JQ
+## JQ
 So I have written already about [how I use AzureCLI & PowerShell together](https://millerb.co.uk/2019/12/07/Az-CLI-vs-Az-PowerShell.html) but I was also made aware of [jq](https://stedolan.github.io/jq/) which I suppose is similar to how I would normally use `ConvertFrom-Json` or `ConvertFrom-Json`.
 
 I have been trying to get better with this instead of just defaulting to PowerShell but the data manipulation and objects that Pwsh provides it's a tough ask.
 
-### Other Things
+## Other Things
 My [original post](https://millerb.co.uk/2019/02/28/My-Vscode-Setup.html) is still very much valid and most of the shortcuts I have copied over and work just fine.
 
 - [git profiles](https://millerb.co.uk/2019/02/28/My-Vscode-Setup.html#git-profiles)
