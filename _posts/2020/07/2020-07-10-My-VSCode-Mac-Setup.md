@@ -1,5 +1,5 @@
 ---
-title: My MacOS VSCode Setup
+title: Making The Switch to MacOS
 summary: An upated post on my previous VSCode productivity post.
 
 excerpt_separator: <!--more-->
