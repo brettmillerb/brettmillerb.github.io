@@ -156,11 +156,13 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd:$true
 ```
 
+As part of the above tweaks to PSReadline I am also using a PowerShell module [PSUnixUtilCompleters](https://www.powershellgallery.com/packages/Microsoft.PowerShell.UnixCompleters/0.1.1) by [@rjmholt](https://twitter.com/rjmholt) which gives you parameter completers for native linux and MacOS comands.
+
 I have added a gist of my entire profile [here](https://gist.github.com/brettmillerb/467e4ee2d7f8e97897f106a5534f884b) so this post doesn't get too long.
 
 ![Pwsh prompt MacOS](https://user-images.githubusercontent.com/24279339/87207759-a55f6780-c304-11ea-8c24-abdba079b18c.png)
 
-## Remove Development Extension
+## Remote Development Extension
 I wrote about [Developing Pwsh Azure Functions inside a Container](https://millerb.co.uk/2019/11/27/Developing-Pwsh-Az-Functions-In-Docker-And-VsCode.html) some time ago and it was really my my first foray into using docker as a daily tool but this is now how I work every day for most of the repositories and code that I write.
 
 The above post covers pretty much everything you need to get started with that but using docker as a development enviroment has been a game changer.

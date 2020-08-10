@@ -28,7 +28,7 @@ So using the provided examples I should be able to use Invoke-RestMethod to get 
 Invoke-RestMethod "http://api.bandsintown.com/artists/LiveInjection/events.json?api_version=2.0&app_id=Bedlington"
 ```
 
-```powershel
+```powershell
 id                 : 12738749
 artist_id          : 941660
 artist_event_id    : 15964405
