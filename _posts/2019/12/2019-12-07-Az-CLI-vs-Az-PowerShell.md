@@ -10,7 +10,7 @@ tags:
     - Azure CLI
 ---
 
-I see quite a bit of conversation about whether people prefer Azure CLI or PowerShell for managing their Azure resources andiIf like me, you have come from managing on-premises workloads before moving over to managing cloud magic, you will likely want to use the tools that are familiar to you. So naturally I tend to lean towards PowerShell but I have been using the CLI more frequently so I wanted to highlight that it doesn't have to be one or the other and both have their benefits.
+I see quite a bit of conversation about whether people prefer Azure CLI or PowerShell for managing their Azure resources and if like me, you have come from managing on-premises workloads before moving over to managing cloud magic, you will likely want to use the tools that are familiar to you. So naturally I tend to lean towards PowerShell but I have been using the CLI more frequently so I wanted to highlight that it doesn't have to be one or the other.
 
 The Azure PowerShell module is now on it's 3rd iteration. You had the original `Azure` module followed by `AzureRM` and now you have the cross platform `Az` module.
 
