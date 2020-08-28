@@ -119,22 +119,57 @@ This has changed slightly as I am now on MacOS in the fact that I am now running
 ### Bash / zshrc profile
 I am using PowerLevel9k for my theme which offers some nice customisations. I have not really played around with this beyond my initial setup which I am quite happy with.
 
-I am now finding that I am using zsh as a primary shell over PowerShell for day to day interaction and primarily interacting with git. I also tend to stick to bash for Azure CLI too for the tab completion and speed it offers.
+I am now finding that I am using zsh as a primary shell over PowerShell for day to day interaction especially when interacting with git. I also tend to stick to bash for Azure CLI too for the tab completion and speed it offers.
 
 ![iterm2 bash profile](https://user-images.githubusercontent.com/24279339/87206659-29642000-c302-11ea-81f1-4eecd6df2da2.png)
 
 I have added this [as a gist](https://gist.github.com/brettmillerb/5f9197ce3568b230f52c9641d92f99bb) so I don't make this post longer than it needs to be.
 
+There are a few things that I have had to add to make my life easier when switching between bash/zsh and PowerShell so that I have consistent commands available to me.
+
+`cls` is too engrained and quicker to type so that has to go in there. The other two aliases are pretty self-explanatory.
+
+```bash
+# aliases
+alias cls='clear'
+alias code='code-insiders'
+alias pwsh='pwsh-preview'
+```
+
+The other thing that I really like is the tab completion for Azure CLI which doesn't appear to work with zsh out of the box. Adding this to your zshrc profile enables that.
+
+```bash
+# Azure CLI tab completion
+autoload bashcompinit && bashcompinit
+source $ZSH/oh-my-zsh.sh
+source /usr/local/etc/bash_completion.d/az
+```
+
 ### Powershell Profile
+
+**Update** After a thread on twitter by [Dave Carroll](https://twitter.com/thedavecarroll/status/1295379473697832967?s=20) I decided to take a little time and fix up my pwsh profile to something a bit nicer.
 
 This has changed a little since I moved. Mainly to accommodate differences between bash and PowerShell on Mac so that they work in a consistent manner.
 
-My Toolbox module that I import in my profile can be found [here](https://github.com/brettmillerb/Toolbox) in my github repos.
-
+My Toolbox module that I import in my profile can be found [here](https://github.com/brettmillerb/Toolbox) in my github repo. This has the following functions which are imported into my session.
 ```powershell
 # Module with some helper functions
 Import-Module -Name Toolbox
+```
 
+```powershell
+Backup-Profile.ps1                 # Backs up my profile to github
+Export-AzKeyVaultCertificate.ps1   # Export Azure Key Vault PFX Certificate
+Get-CommandInfo.ps1                # Stolen from Chris Dent 😃
+Get-Gituser.ps1                    # Shows the current folders git user from gitconfig
+Get-MultiPass.ps1                  # Windows only CliXml Command to import Credentials object
+Get-Syntax.ps1                     # Reformatting of Get-Command $Command -Syntax to print vertically
+New-MultiPass.ps1                  # Windows only CliXml Command to create Credenials object
+```
+
+I like being able to traverse the directory structures quickly so these shortcuts allow me to jump back one or two directories quickly and are also available in zsh so it's consistent behaviour across shells.
+
+```powershell
 # functions to be aliased to make traversing directories consistent with zsh shortcuts
 function BackOne {
     Set-Location ..
@@ -142,13 +177,37 @@ function BackOne {
 function BackTwo {
     Set-Location ../..
 }
+```
 
+zsh has some handy default parameters for `ls` so I have added these to my PowerShell prompt as I am too used to `ls` to stop using it so may as well make it consistent right?!
+
+```powershell
+function Get-NativeChildItem {
+    & (Get-Command ls -CommandType Application) -lhG
+}
+function Get-NativeChildItemG {
+    & (Get-Command ls -CommandType Application) -G
+}
+function Get-NativeChildItemA {
+    & (Get-Command ls -CommandType Application) -lAhG
+}
+```
+Alias all of the things
+```powershell
 New-Alias -Name code -Value 'code-insiders'
 New-Alias -Name '..' -Value 'BackOne'
 New-Alias -Name '...' -Value 'BackTwo'
+New-Alias -Name ll -Value Get-NativeChildItem
+New-Alias -Name ls -Value Get-NativeChildItemG
+New-Alias -Name la -Value Get-NativeChildItemA
 # clip on windows is clip.exe and I use this a lot.
 New-Alias -Name clip -Value Set-Clipboard
+```
 
+PSReadline is awesome and it's made even more awesome on MacOS with the [PSUnixUtilCompleters](https://www.powershellgallery.com/packages/Microsoft.PowerShell.UnixCompleters/0.1.1) PowerShell module by [@rjmholt](https://twitter.com/rjmholt) which gives you parameter completers for native linux and MacOS comands.
+
+Enable this in your profile with the below:
+```powershell
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 
 # Menu Complete for tab completion is really nice and gives you parameter information during selection.
@@ -156,11 +215,58 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd:$true
 ```
 
-As part of the above tweaks to PSReadline I am also using a PowerShell module [PSUnixUtilCompleters](https://www.powershellgallery.com/packages/Microsoft.PowerShell.UnixCompleters/0.1.1) by [@rjmholt](https://twitter.com/rjmholt) which gives you parameter completers for native linux and MacOS comands.
+After seeing [Tyler Leonhardt (@TylerLeonhardt)](https://twitter.com/TylerLeonhardt) example in the twitter thread I decided to give `Posh-Git` a go with `Oh-My-Posh` and I am very pleased with the result.
 
-I have added a gist of my entire profile [here](https://gist.github.com/brettmillerb/467e4ee2d7f8e97897f106a5534f884b) so this post doesn't get too long.
+- Git auto-completion
+- VCS status in my prompt
+- Easy customisation
+- Consistent Powerlevel theme between zsh and PS
 
-![Pwsh prompt MacOS](https://user-images.githubusercontent.com/24279339/87207759-a55f6780-c304-11ea-8c24-abdba079b18c.png)
+```powershell
+Import-Module posh-git
+Import-Module oh-my-posh
+$gitpromptsettings.DefaultPromptAbbreviateHomeDirectory = $true
+$GitPromptSettings.DefaultPromptSuffix = $('`n❯❯ ' * ($nestedPromptLevel + 1))
+
+# This is to prevent an issue where iterm2 throws an error every time the prompt is run
+if ($env:LC_TERMINAL -eq "iTerm2") {
+    $ThemeSettings.Options.ConsoleTitle = $false
+}
+
+Set-Theme Powerlevel10k-Lean
+$ThemeSettings.CurrentUser = $null
+$ThemeSettings.PromptSymbols['promptindicator'] = ("`n{0} " -f ([char]::ConvertFromUtf32(0x276F) * 2))
+```
+
+One other cool thing that I added to my profile recently was enabling the ability to traverse folders without having to use `Set-Location` or `cd` which is consistent behaviour with zsh.
+
+I found an old blog post on devblogs where [Jason Shirk(@lzybkr)](https://twitter.com/lzybkr) had written how to do this so I modified it slightly for my needs so that any command you type is evaluated and if it's a path it will traverse into that directory. This is yet more consistency between the two shells and saves on the typing. Coupled with the `..` & `...` aliases it makes navigation so pleasant.
+
+```powershell
+# Taken from here: https://devblogs.microsoft.com/scripting/whats-in-your-powershell-profile-powershell-team-favorites/
+# Changing directories without having to type cd to replicate zsh
+$ExecutionContext.InvokeCommand.CommandNotFoundAction = {
+    param([string]$commandName,
+        [System.Management.Automation.CommandLookupEventArgs]$eventArgs
+    )
+    # Remove the ‘get-‘ prefix that confuses Test-Path after we produce
+    # something that is path like after the get-.
+
+    if ($commandName.StartsWith(‘get-‘)) {
+        $commandName = $commandName.Substring(4)
+    }  
+
+    # If the command looks like a location, just switch to that directory
+    if (Test-Path -Path $commandName) {
+        $eventArgs.CommandScriptBlock = { Set-Location -LiteralPath $commandName }.GetNewClosure()
+        return
+    }
+}
+```
+
+I have updated the gist of my profile [here](https://gist.github.com/brettmillerb/467e4ee2d7f8e97897f106a5534f884b).
+
+![Pwsh prompt MacOS](https://user-images.githubusercontent.com/24279339/91505604-df41f880-e8c7-11ea-9dcd-cd46e06c4923.png)
 
 ## Remote Development Extension
 I wrote about [Developing Pwsh Azure Functions inside a Container](https://millerb.co.uk/2019/11/27/Developing-Pwsh-Az-Functions-In-Docker-And-VsCode.html) some time ago and it was really my my first foray into using docker as a daily tool but this is now how I work every day for most of the repositories and code that I write.
