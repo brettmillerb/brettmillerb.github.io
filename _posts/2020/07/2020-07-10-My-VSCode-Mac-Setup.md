@@ -121,7 +121,7 @@ I am using PowerLevel9k for my theme which offers some nice customisations. I ha
 
 I am now finding that I am using zsh as a primary shell over PowerShell for day to day interaction especially when interacting with git. I also tend to stick to bash for Azure CLI too for the tab completion and speed it offers.
 
-![iterm2 bash profile](https://user-images.githubusercontent.com/24279339/87206659-29642000-c302-11ea-81f1-4eecd6df2da2.png)
+![iterm2 bash profile](https://user-images.githubusercontent.com/24279339/91507315-6d1fe280-e8cc-11ea-9df9-cd2df562693b.png)
 
 I have added this [as a gist](https://gist.github.com/brettmillerb/5f9197ce3568b230f52c9641d92f99bb) so I don't make this post longer than it needs to be.
 
