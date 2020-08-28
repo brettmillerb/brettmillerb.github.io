@@ -123,7 +123,7 @@ I am now finding that I am using zsh as a primary shell over PowerShell for day 
 
 ![iterm2 bash profile](https://user-images.githubusercontent.com/24279339/91507315-6d1fe280-e8cc-11ea-9df9-cd2df562693b.png)
 
-I have added this [as a gist](https://gist.github.com/brettmillerb/5f9197ce3568b230f52c9641d92f99bb) so I don't make this post longer than it needs to be.
+I have added this [as a gist](https://gist.github.com/brettmillerb/5f9197ce3568b230f52c9641d92f99bb).
 
 There are a few things that I have had to add to make my life easier when switching between bash/zsh and PowerShell so that I have consistent commands available to me.
 
