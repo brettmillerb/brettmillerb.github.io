@@ -161,7 +161,7 @@ function Get-ADLocalAdminGroup
 }
 ```
 
-![LocalAdminOutput2](/_screenshots/LocalAdminOutput5.png)
+![LocalAdminOutput2](/assets/img/LocalAdminOutput5.png)
 
 This effectively means that I can check against any computer account to see if if has a Local Admin group and who the members of each group are. You can see under the members that some show as an array indicating that there are multiple members of the group so we can simply use `Select-Object`  Members and it will show us the users.
 
