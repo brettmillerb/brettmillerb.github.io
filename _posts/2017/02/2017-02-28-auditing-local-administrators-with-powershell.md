@@ -9,7 +9,7 @@ tags:
 ---
 Previously I covered how we administer workstation local admin access within our environment.
 
-[Workstation Local Admins and Auditing via Active Directory](http://millerb.co.uk/workstation-local-admins-and-auditing-via-active-directory/)
+[Workstation Local Admins and Auditing via Active Directory](https://millerb.co.uk/2017/02/27/workstation-local-admins-and-auditing-via-active-directory.html)
 
 I briefly touched on damage limitation and being able to audit who has local admin permissions over their workstations at any given time.
 
