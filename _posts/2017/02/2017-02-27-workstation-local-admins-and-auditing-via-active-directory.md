@@ -58,4 +58,4 @@ Administration of Local Admin permissions in a complex environment can be troubl
 
 I have created a Powershell function to assist with managing these groups which I will cover in my next post:
 
-[Auditing Local Administrators with Powershell](http://millerb.co.uk/auditing-local-administrators-with-powershell/)
+[Auditing Local Administrators with Powershell](https://millerb.co.uk/2017/02/28/auditing-local-administrators-with-powershell.html)
