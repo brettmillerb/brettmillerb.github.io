@@ -67,3 +67,6 @@ twitter:
 
 slack-workspace:
   powershell:     https://slofile.com/slack/PowerShell
+
+discord-workspace:
+  powershell:     https://aka.ms/psdiscord

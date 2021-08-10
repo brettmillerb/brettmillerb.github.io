@@ -20,13 +20,20 @@
       {% include svg/twitter.svg %}
     </a>
   {% endif %}
-  {% if site.slack-workspace.powershell %}
+  {% if site.discord-workspace.powershell %}
+    <a id="discord-link"
+       class="icon" title="Powershell Discord" aria-label="Powershell Discord"
+       href="{{ site.discord-workspace.powershell }}">
+      {% include svg/discord.svg %}
+    </a>
+  {% endif %}
+  <!-- {% if site.slack-workspace.powershell %}
     <a id="slack-link"
        class="icon" title="Powershell Slack" aria-label="Powershell Slack"
        href="{{ site.slack-workspace.powershell }}">
       {% include svg/slack.svg %}
     </a>
-  {% endif %}
+  {% endif %} -->
   <a id="subscribe-link"
      class="icon" title="Subscribe" aria-label="Subscribe"
      href="{{ site.baseurl }}/{{ site.feed.path | default: 'feed.xml' }}">
