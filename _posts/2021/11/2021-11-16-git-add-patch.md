@@ -24,6 +24,80 @@ Normally working on a change within a project, you will make and save the change
 # Add all local changes to your index
 git add .
 
+git commit -m "Made a super awesome change"
+```
+
+You can be more selective than this by only commiting certain files so you can chunk changes across multiple files into different commits.
+
+```bash
+# Only add changes to a specific file to your index
+git add MyProject/subFolder/file.ps1
+```
+
+### git add --patch
+You can go one step further utilising `git add --patch` which allows you to add specific changes within the same file to different commits.
+
+Using this blog post for example.
+
+```bash
+❯❯ git status -u
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	_posts/2021/11/2021-11-16-git-add-patch.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+I can choose to add different parts of the file to the index so that I can make my commits smaller and easier to track within the git history.
+
+```bash
+❯❯ git add --patch _posts/2021/11/2021-11-16-git-add-patch.md
+
+@@ -17,4 +17,6 @@
+
+ <!--more-->
+
++### git add
++Normally working on a change within a project, you will make and save the changes in your file then using `git add` you will add the changes you just made to your index.
+
+(1/3) Stage this hunk [y,n,q,a,d,j,J,g,/,e,?]?
+```
+
+Git will show you a diff information about where the code is in the file, followed by the diff (hunk) of code that it has selectively chosen for you. This is followed by the number of hunks and some interactive options for adding code to the index.
+
+Typing `?` will show help for the interactive options. I've only listed the simple ones here:
+
+```bash
+y - stage this hunk
+n - do not stage this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+d - do not stage this hunk or any of the later hunks in the file
+s - split the current hunk into smaller hunks
+? - print help
+```
+
+Once you have selected the hunks you want to add you will commit your changes with a relevant commit message
+
+```bash
+❯❯ git commit -m "Added first 2 hunks from patch"
+[gitAddPatch 4f998ba] Added first 2 hunks from patch
+ 1 file changed, 29 insertions(+)
+ create mode 100644 _posts/2021/11/2021-11-16-git-add-patch.md
+```
+
+You'll notice that running `git status` again will still show the file still has untracked changes
+
+```bash
+❯❯ git status
+On branch gitAddPatch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   _posts/2021/11/2021-11-16-git-add-patch.md
+```
 
 ### Conclusion
 
