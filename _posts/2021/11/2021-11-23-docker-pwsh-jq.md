@@ -43,8 +43,6 @@ infallible_bassi
 Jos Koelewijn [(@jawz_84](https://twitter.com/Jawz_84/)) resorted to using `ConvertFrom-StringData` which converts string output into a hashtable so you can access the key/value pairs.
 
 ```
-docker images | Select-Object -Skip 1| ConvertFrom-StringData -Delimiter ' ' | ForEach-Object Keys
-
 ❯❯ docker images | Select-Object -Skip 1 | ConvertFrom-StringData -Delimiter ' ' | ForEach-Object Keys
 vsc-socialopinions-d9e1feb0b3c073836b87b223deef5934
 vsc-azureadfunction-fddb75b17c14d953fe380384c6a1553f
@@ -91,3 +89,5 @@ docker container ls --all --format '{{json .}}' | jq --slurp '.[] | .Names'
 There are many ways to achieve the same thing and people will generally tackle a problem in the way they're most comfortable with.
 
 I've found over the years that having small amounts of familiarity with different tool sets outside of my normal wheelhouse is beneficial for those moments that you may not have your normal toolset available to you.
+
+Whilst I may have skirted around the goal of removing the containers once you are able to parse the output it can be utilised however you see fit.
