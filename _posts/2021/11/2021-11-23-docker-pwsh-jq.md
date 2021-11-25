@@ -71,7 +71,7 @@ docker container ls --all --format '{{.Names}}'
 {% endraw %}
 
 ### And what about using _just_ jq?
-You can use the `.[]` object iterator to return only the 
+You can use the `.[]` object iterator to return only the properties you want.
 {% raw %}
 ```bash
 docker container ls --all --format '{{json .}}' | jq '.Names'
