@@ -72,7 +72,7 @@ The first result was from Mike F. Robbins ([@mikefrobbins](https://twitter.com/m
 
 **Mike's blog post:** [https://mikefrobbins.com/2017/12/21/generate-a-secret-santa-list-with-powershell/](https://mikefrobbins.com/2017/12/21/generate-a-secret-santa-list-with-powershell/)
 
-Interestingly he encountered the same issue I did with the basic loop sometimes leaving a santa without someone to gift a preset to. I decided to steal Mike's code to make my life easier.
+Interestingly he encountered the same issue I did with the basic loop sometimes leaving a santa without someone to gift a present to. I decided to steal Mike's code to make my life easier.
 
 ### Mike's Secret Santa Function
 *I've removed the comment based help for brevity.*
@@ -115,17 +115,40 @@ This works great but with only one problem! I am in the secret santa so I don't 
 The main changes are in the latter part of the function which generates the output. I don't want to print to the screen and spoil the surprise so I decided I would write the results to a file so that I could send the file to people without opening it and revealing who the recipients of the gift were.
 
 ```powershell
-for ($i = 0; $i -lt ($Name.Length); $i += 1) {
-    # Create a file name of the Secret Santa
-    $fileName = '{0}.txt' -f $Name[$i]
-
-    # Generate a file name of the Secret Santa with the persons name.
-    # GetUnresolvedProviderPathFromPsPath will add the files to the $PWD
-    $outputPath = Join-Path -Path $PSCmdlet.GetUnresolvedProviderPathFromPSPath('.') -ChildPath $fileName
-
-    # Add a line of text to tell Santa who they are gifting the present to.
-    $fileValue = 'Your buying for {0}' -f $Giftee[$i]
-    Set-Content -Path $outputPath -Value $fileValue
+function Get-MrSecretSantaList {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory)]
+        [ValidateCount(2,32768)]
+        [string[]]$Name
+    )
+    if ($Name.Length % 2 -ne 0) {
+        Throw 'An even number of Names must be specified in order for matching to occur.'
+    }
+    do {
+        $Giftee = $Name | Sort-Object {Get-Random}
+    }
+    while (
+        $(for ($i = 0; $i -lt ($Name.Length); $i += 1) {
+            if ($Name[$i] -eq $Giftee[$i]) {
+                Write-Verbose -Message "A duplicate has occured in loop $i Name: $($Name[$i]) cannot match Giftee: $($Giftee[$i])"
+                $true
+                break
+            }
+        })
+    )
+    for ($i = 0; $i -lt ($Name.Length); $i += 1) {
+        # Create a file name of the Secret Santa
+        $fileName = '{0}.txt' -f $Name[$i]
+    
+        # Generate a file name of the Secret Santa with the persons name.
+        # GetUnresolvedProviderPathFromPsPath will add the files to the $PWD
+        $outputPath = Join-Path -Path $PSCmdlet.GetUnresolvedProviderPathFromPSPath('.') -ChildPath $fileName
+    
+        # Add a line of text to tell Santa who they are gifting the present to.
+        $fileValue = 'Your buying for {0}' -f $Giftee[$i]
+        Set-Content -Path $outputPath -Value $fileValue
+    }
 }
 ```
 
