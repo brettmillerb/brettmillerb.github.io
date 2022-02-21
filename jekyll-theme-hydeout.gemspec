@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-paginate", "~> 1.1"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.6"
   spec.add_runtime_dependency "kramdown-parser-gfm", "~> 1.1.0"
-  spec.add_development_dependency "bundler", "~> 2.2.10"
+  spec.add_development_dependency "bundler", "~> 2.3.7"
 end
