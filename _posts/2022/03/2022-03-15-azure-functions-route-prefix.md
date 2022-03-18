@@ -76,7 +76,7 @@ If I start a local debug of a basic HTTP function you can see the changes you ha
 
 #### Before:
 
-![RoutePrefixBefore](../../assets/img/routePrefixAfter.png)
+![RoutePrefixBefore](/assets/img/routePrefixAfter.png)
 
 #### After:
 
@@ -88,7 +88,7 @@ In this contrived example there's no real need to change the route prefix or the
 
 For example you could have multiple functions within your project and you want to define the route to coincide with the `METHOD` of the HTTP request for each function.
 
-![Elaborate Example of multiple HTTP Endpoints](../../assets/img/2022-03-18-15-50-34.png)
+![Elaborate Example of multiple HTTP Endpoints](/assets/img/2022-03-18-15-50-34.png)
 
 ### Conclusion
 
