@@ -1,6 +1,6 @@
 ---
-title: Modify the route prefix for Azure Functions
-summary: Make the URI for your functions more readable
+title: Making Sense of Azure Functions Routes
+summary: Basic understanding of Azure Functions route customisations
 
 excerpt_separator: <!--more-->
 
@@ -10,11 +10,12 @@ tags:
     - Azure
 ---
 
-When you create an serverless Azure Functions project all function routes are prefixed with api e.g. `myFunctionProject/api/functionName`. This is fine for most cases, but it can be confusing as it is unnecessary and not very descriptive.
+### Route Prefixes
+When you create Azure Functions project which has HTTP endpoints all function routes by default are prefixed with `api` e.g. `myFunctionProject/api/<functionName>`. This is fine for most cases, but it can be confusing as it is not very descriptive.
 
 For example when you initialise a new HTTP trigger function using the Azure Functions CLI, you are prompted for the name for your function. This name is used for the folder within your project but also the name of the function itself.
 
-You can however customise this URI within your Azure Functions project so that it can be more descriptive.
+You can however customise this URI route within your Azure Functions project so that it can be more useful.
 
 <!--more-->
 
@@ -24,9 +25,9 @@ Within your PowerShell Azure Functions project you have a `host.json` file which
 
 Full docs on the `host.json` file can be found here: [host.json reference for Azure Functions 2.x and later](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-host-json).
 
-You can customize or remove the prefix using the extensions.http.routePrefix property in the `host.json` file.
+You can customize or remove the prefix using the `extensions.http.routePrefix` property in the `host.json` file.
 
-Below is an example of how to remove the route prefix from your functions by setting the `extensions.http.routePrefix` property to an empty string:
+Below is an example of how to remove the route prefix from your functions by setting the routePrefix property to an empty string:
 
 ```json
 {
@@ -38,11 +39,13 @@ Below is an example of how to remove the route prefix from your functions by set
 }
 ```
 
-### Changing the Route Prefix in your Functions
+Given that there is no real need to have a pre-defined route prefix I tend to do this on most of my projects to make the URI's easier to read and distinguish from each other, especially when there are multiple functions within the project.
 
-Now that you have removed the routePrefix from your `host.json` file, you can also customise your functions route within the `function.json` file on a per functions basis.
+### Changing the Route of your Functions
 
-Below is an example of how to change the route for a specific function:
+Now that you have removed the routePrefix from your `host.json` file, you also have the option to customise your functions route on a per function basis.
+
+Below is an example of how to change the route for a specific function by setting the `route` property in the `function.json` file:
 ```json
 {
   "bindings": [
@@ -67,7 +70,7 @@ Below is an example of how to change the route for a specific function:
 
 ```
 
-This allows you greater control over the URI for your function and makes it more discoverable and descriptive.
+This allows you greater control over the URI for your function and makes it more descriptive.
 
 If I start a local debug of a basic HTTP function you can see the changes you have made to the route prefix and function route:
 
@@ -85,10 +88,10 @@ In this contrived example there's no real need to change the route prefix or the
 
 For example you could have multiple functions within your project and you want to define the route to coincide with the `METHOD` of the HTTP request for each function.
 
-![](../../assets/img/2022-03-18-15-50-34.png)
+![Elaborate Example of multiple HTTP Endpoints](../../assets/img/2022-03-18-15-50-34.png)
 
 ### Conclusion
 
 This blog post shows you some of the basic changes you can make to the route prefix and function route within your Azure Functions project.
 
-There are some other cool things that you can do with routes which I will cover in a follow up post which can be used as a reference as I constantly have to look up how to change the routes if I have not done it in a while.
+There are some other cool things that you can do with routes within your functions projects which I will cover in a follow up post soon.
