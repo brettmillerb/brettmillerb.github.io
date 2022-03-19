@@ -9,11 +9,10 @@ tags:
     - PowerShell
     - Azure
 ---
+When you initialise a new HTTP trigger function using the Azure Functions CLI, you are prompted for the name for your function. This name is used for the folder within your project but also the name of the function itself. There are also some default configuration settings for the URI that will be used when you publish your FunctionApp.
 
 ### Route Prefixes
 When you create Azure Functions project which has HTTP endpoints all function routes by default are prefixed with `api` e.g. `myFunctionProject/api/<functionName>`. This is fine for most cases, but it can be confusing as it is not very descriptive.
-
-For example when you initialise a new HTTP trigger function using the Azure Functions CLI, you are prompted for the name for your function. This name is used for the folder within your project but also the name of the function itself.
 
 You can however customise this URI route within your Azure Functions project so that it can be more useful.
 
